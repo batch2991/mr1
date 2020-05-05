@@ -26,8 +26,15 @@ public class Compose extends MainClass
 		 if(driver.findElement(By.name(ComposeP.ito)).isDisplayed())
 		 {
 			 System.out.println("hello");
+
+			 System.out.println("Anu");
+
 			 System.out.println("this is new line");
+<<<<<<< HEAD
 			 System.out.println("dfsdfsdfs");
+=======
+
+>>>>>>> branch 'master' of https://github.com/batch2991/mr1.git
 			 //Reporter.log("<font color='green'><b>Compose is working</b></font>");
 			 log=ext.createTest("Compose_Sendmail");
 			 log.log(Status.PASS,"Compose is Working");
