@@ -27,6 +27,7 @@ public class Compose extends MainClass
 		 {
 			 System.out.println("hello");
 			 System.out.println("this is new line");
+			 System.out.println("dfsdfsdfs");
 			 //Reporter.log("<font color='green'><b>Compose is working</b></font>");
 			 log=ext.createTest("Compose_Sendmail");
 			 log.log(Status.PASS,"Compose is Working");
