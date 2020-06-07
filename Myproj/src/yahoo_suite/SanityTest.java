@@ -30,7 +30,7 @@ public class SanityTest extends MainClass
 		  driver=new ChromeDriver();
 	  }
 	  
-	  FileInputStream fin = new FileInputStream("D:\\sel_dec18\\testcases.xlsx");  //get the excel file
+	  FileInputStream fin = new FileInputStream("D:\\sel_dec18\\TestCases.xlsx");  //get the excel file
 	  XSSFWorkbook wb=new XSSFWorkbook(fin);   //get workbook in the file
 	  XSSFSheet ws=wb.getSheet("sanitytest"); //get sheet in the workbook
 
@@ -43,14 +43,13 @@ public class SanityTest extends MainClass
 			{
 				classname=row.getCell(3).getStringCellValue();
 				methodname=row.getCell(4).getStringCellValue();
-				Class c=Class.forName(classname);   
-				Method m=c.getMethod(methodname, null);		
-				Object obj=c.newInstance();    
-				m.invoke(obj, null);				
+				Class c=Class.forName(classname);   //load the Sample class into memory  and here c is referring to the class
+				Method m=c.getMethod(methodname,null);	//get the method in the class and also specify if any datatatype for the args
+				Object obj=c.newInstance();    //create Object for the class
+				m.invoke(obj, null);		//call the method, specify if any input values				
 			}
 	  }
 	  fin.close();
-	  
 	/* Login l = new Login();
 	 l.valid_login();
 	 

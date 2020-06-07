@@ -25,15 +25,14 @@ public class Compose extends MainClass
 	 {
 		 if(driver.findElement(By.name(ComposeP.ito)).isDisplayed())
 		 {
-			 System.out.println("hello");
-			 System.out.println("this is new line");
-			 System.out.println("dfsdfsdfs");
 			 //Reporter.log("<font color='green'><b>Compose is working</b></font>");
-			 log=ext.createTest("Compose_Sendmail");
-			 log.log(Status.PASS,"Compose is Working");
+			 
+			 log=ext.createTest("ComposeTest_SendMail");
+			 log.log(Status.PASS,"Compose working");
 			 File f=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			 FileUtils.copyFile(f,new File("d:\\mar_2020\\images\\compose.png"));
-			 log.addScreenCaptureFromPath("d:\\\\mar_2020\\\\images\\\\compose.png");
+			 log.addScreenCaptureFromPath("d:\\mar_2020\\images\\compose.png");
+			 
 			 driver.findElement(By.id(ComposeP.ito)).sendKeys("abcd@gmail.com");
 			 driver.findElement(By.id(ComposeP.isub)).sendKeys("testmail");
 			 driver.findElement(By.id(ComposeP.ibody)).sendKeys("This is sample message in the body");
@@ -43,12 +42,12 @@ public class Compose extends MainClass
 	 }
 	 catch(Exception e)
 	 {
-		//Reporter.log("<font color='red'><b>Compose NOT working</b></font>");
-		 log=ext.createTest("Compose_Sendmail");
-		 log.log(Status.FAIL,"Compose NOT Working");
+		//Reporter.log("<font color='red'><b>Compose not working</b></font>");
+		 log=ext.createTest("ComposeTest_SendMail");
+		 log.log(Status.FAIL,"Compose NOT working");
 		 File f=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		 FileUtils.copyFile(f,new File("d:\\mar_2020\\images\\compose.png"));
-		 log.addScreenCaptureFromPath("d:\\\\mar_2020\\\\images\\\\compose.png");
+		 log.addScreenCaptureFromPath("d:\\mar_2020\\images\\compose.png");
 	 }	 
  }
  public void close()

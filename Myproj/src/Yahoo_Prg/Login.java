@@ -83,22 +83,21 @@ public class Login extends MainClass
 	 {
 		 if(driver.findElement(By.name(LoginP.nfname)).isDisplayed())
 		 {
-			//Reporter.log("<font color='green'><b>Cretae account working</b></font>");
-			 log=ext.createTest("LoginTest_Createuser");
-			 log.log(Status.PASS, "Sign up is working");
-			 File f=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			 FileUtils.copyFile(f,new File("d:\\mar_2020\\images\\signup.png"));
-			 log.addScreenCaptureFromPath("d:\\\\mar_2020\\\\images\\\\signup.png");
+			log=ext.createTest("LoginTest_Createaccount");
+			log.log(Status.PASS,"Create account working");
+			File f=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(f,new File("d:\\mar_2020\\images\\createacc.png"));
+			log.addScreenCaptureFromPath("d:\\mar_2020\\images\\createacc.png");
 		 }
 	 }
 	 catch(Exception e)
 	 {
-		// Reporter.log("<font color='red'><b>Cretae account NOT working</b></font>");
-		 log=ext.createTest("LoginTest_Createuser");
-		 log.log(Status.FAIL, "Sign up NOT working");
+		 //Reporter.log("<font color='red'><b>create acc NOT working</b></font>");
+		 log=ext.createTest("LoginTest_Createaccount");
+		 log.log(Status.FAIL,"Create account NOT working");
 		 File f=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		 FileUtils.copyFile(f,new File("d:\\mar_2020\\images\\signup.png"));
-		 log.addScreenCaptureFromPath("d:\\\\mar_2020\\\\images\\\\signup.png");
+		 FileUtils.copyFile(f,new File("d:\\mar_2020\\images\\createacc.png"));
+		 log.addScreenCaptureFromPath("d:\\mar_2020\\images\\createacc.png");
 	 }
  }
 }

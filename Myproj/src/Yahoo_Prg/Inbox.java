@@ -13,9 +13,5 @@ public class Inbox extends MainClass
 	  driver.findElement(By.xpath(InboxP.xcheckbox)).click();
 	  driver.findElement(By.xpath(InboxP.xdelete)).click();
 	  
-  }
-  public void replymail()
-  {
-	  
-  }
+  }  
 }

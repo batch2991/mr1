@@ -21,15 +21,14 @@ public class MainClass
   public static ExtentTest log;
   
   @BeforeSuite
-  public void initialize()
+  public void initializereport()
   {
-	   htmlreport = new ExtentHtmlReporter("D:\\Mar_2020\\yahooreport.html");
+	   htmlreport = new ExtentHtmlReporter("d:\\mar_2020\\yahooreport.html");
 	   ext = new ExtentReports();
 	   ext.attachReporter(htmlreport);
-	   ext.setSystemInfo("Host Name", "SYS1");
+	   ext.setSystemInfo("Host Name", "Venkatgn");
 	   ext.setSystemInfo("Environment", "Test Env");
 	   ext.setSystemInfo("User Name", "Venkat");
-	
 	   
 	   htmlreport.config().setDocumentTitle("Yahoo");
 	   htmlreport.config().setReportName("Yahoo Functional Testing");
@@ -38,14 +37,12 @@ public class MainClass
   }
   
   @AfterSuite
-  public void updaterport()
+  public void savereport() throws Exception
   {
-	   ext.flush();  //save the report
-	   try
-	   {
-	   Runtime.getRuntime().exec("taskkill /f /im chromedriver.exe");
-	   Runtime.getRuntime().exec("taskkill /f /im geckodriver.exe");
-	   }catch(Exception e) {}
+	  ext.flush();  //save the report
+	  Runtime.getRuntime().exec("taskkill /f /im geckodriver.exe");
+	  Runtime.getRuntime().exec("taskkill /f /im chromedriver.exe");
   }
+  
     
 }
